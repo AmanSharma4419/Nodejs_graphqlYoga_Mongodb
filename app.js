@@ -8,5 +8,7 @@ mongoose.connect("mongodb://localhost:27017/UserApp");
 const server = new GraphQLServer({ typeDefs, resolvers });
 
 mongoose.connection.once("open", function () {
+  // require("./dbbackup/utils/cron");
+
   server.start(() => console.log("Server is running on localhost:4000"));
 });
